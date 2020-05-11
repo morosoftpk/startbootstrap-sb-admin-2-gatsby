@@ -25,5 +25,5 @@ deploy:
   script:
   - echo "Deploying "
   - npm i -g netlify-cli
-  - netlify deploy -d public --site $NETLIFY_SITE_ID_WEB_APP --auth $NETLIFY_AUTH_TOKEN --prod
+  - netlify deploy -d public --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
   - echo "Deploying Web App is successful"
