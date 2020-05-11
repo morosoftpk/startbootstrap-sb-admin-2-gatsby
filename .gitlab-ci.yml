@@ -7,12 +7,23 @@ workflow:
   rules:
     - if: $CI_COMMIT_BRANCH == "dev"
 
+build: 
+  stage: deploy
+  script:
+  - echo "Building "
+  - npm i
+  - npm run build
+  - echo "Building Web App is successful"
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - build/
+
+
 deploy: 
   stage: deploy
   script:
   - echo "Deploying "
-  - npm i
-  - npm run build
   - npm i -g netlify-cli
   - netlify deploy -d build --site $NETLIFY_SITE_ID_WEB_APP --auth $NETLIFY_AUTH_TOKEN --prod
   - echo "Deploying Web App is successful"
