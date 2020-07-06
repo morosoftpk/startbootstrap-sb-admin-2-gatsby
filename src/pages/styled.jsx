@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -41,7 +41,7 @@ const Excerpt = styled.p`
   margin: 0;
 `
 
-const User = props => (
+const User = (props) => (
   <UserWrapper>
     <Avatar src={props.avatar} alt="" />
     <Description>
