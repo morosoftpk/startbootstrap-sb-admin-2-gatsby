@@ -16,6 +16,15 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['Georgia', 'Lato'], // ['Georgia, Dank Mono'] for multiple
+          urls: ['/fonts/fonts.css'],
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-starter-default',
