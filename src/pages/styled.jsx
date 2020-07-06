@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import Layout from '../components/common/layout'
+import SEO from '../components/common/seo'
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -54,20 +56,23 @@ const User = ({ avatar, username, excerpt }) => (
 
 export default function UsersList() {
   return (
-    <Container>
-      <h1>About Styled Components</h1>
-      <p>Styled Components is cool</p>
-      <User
-        username="Jane Doe"
-        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
-        excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      />
-      <User
-        username="Bob Smith"
-        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
-        excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      />
-    </Container>
+    <Layout>
+      <SEO title="Styled" />
+      <Container>
+        <h1>About Styled Components</h1>
+        <p>Styled Components is cool</p>
+        <User
+          username="Jane Doe"
+          avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
+          excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        />
+        <User
+          username="Bob Smith"
+          avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
+          excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        />
+      </Container>
+    </Layout>
   )
 }
 User.propTypes = {
