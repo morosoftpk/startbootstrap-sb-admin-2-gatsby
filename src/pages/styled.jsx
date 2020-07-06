@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -41,12 +42,12 @@ const Excerpt = styled.p`
   margin: 0;
 `
 
-const User = (props) => (
+const User = ({ avatar, username, excerpt }) => (
   <UserWrapper>
-    <Avatar src={props.avatar} alt="" />
+    <Avatar src={avatar} alt="" />
     <Description>
-      <Username>{props.username}</Username>
-      <Excerpt>{props.excerpt}</Excerpt>
+      <Username>{username}</Username>
+      <Excerpt>{excerpt}</Excerpt>
     </Description>
   </UserWrapper>
 )
@@ -68,4 +69,10 @@ export default function UsersList() {
       />
     </Container>
   )
+}
+User.propTypes = {
+  avatar: PropTypes.node.isRequired,
+  username: PropTypes.node.isRequired,
+  excerpt: PropTypes.node.isRequired,
+
 }
