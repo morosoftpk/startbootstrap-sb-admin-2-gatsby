@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Image from '../components/common/image'
 import Home from '../components/home'
 import Layout from '../components/common/layout'
-import SEO from '../components/common/seo'
+import SEO from '../components/common/seo/seo'
 
 const IndexPage = () => (
   <Layout>
