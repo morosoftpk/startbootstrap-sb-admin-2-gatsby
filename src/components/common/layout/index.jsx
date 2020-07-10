@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import BaseLayout from './base-layout'
 import Header from '../header'
 import Footer from '../footer'
+import Sidebar from '../sidebar'
 
 const Container = styled.div`
   margin: 0 auto;
@@ -12,6 +13,21 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  #wrapper {
+    display: flex;
+  }
+  
+  #wrapper #content-wrapper {
+    background-color: #f8f9fc;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #wrapper #content-wrapper #content {
+    flex: 1 0 auto;
+  }
+  
 `
 const Content = styled.div`
   flex-grow: 1;
@@ -30,9 +46,16 @@ const Layout = ({ children }) => {
     <>
       <BaseLayout>
         <Container>
+
           <Content>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            {children}
+            <div id="wrapper">
+
+              <Sidebar />
+              <div id="content-wrapper" className="d-flex flex-column">
+                <Header siteTitle={data.site.siteMetadata.title} />
+                {children}
+              </div>
+            </div>
           </Content>
           <Footer />
         </Container>
